@@ -5,15 +5,17 @@
  */
 package Entity;
 
+import java.io.Serializable;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  *
  * @author pupil
  */
-public class Product {
+public class Product implements Serializable {
     private String name;
-    private Manufactor[] manufactor;
+    private List<Manufactor> manufactor;
     private int experation_year;
     private int experation_month;
     private int experation_day;
@@ -30,11 +32,11 @@ public class Product {
         this.name = name;
     }
 
-    public Manufactor[] getManufactor() {
+    public List<Manufactor> getManufactor() {
         return manufactor;
     }
 
-    public void setManufactor(Manufactor[] manufactor) {
+    public void setManufactor(List<Manufactor> manufactor) {
         this.manufactor = manufactor;
     }
 
@@ -62,9 +64,15 @@ public class Product {
         this.experation_day = experation_day;
     }
 
+    
+
     @Override
     public String toString() {
-        return "Product{" + "name=" + name + ", manufactor=" + Arrays.toString(manufactor) + ", experation_date= " + experation_day + "." + experation_month + "." + experation_year + '}';
+        return "Product{" + "name=" + name
+                + ", manufactor=" + Arrays.toString(manufactor.toArray()) 
+                + ", experation_date= " + experation_day
+                + "." + experation_month + "."
+                + experation_year + '}';
     }
     
     
