@@ -41,6 +41,11 @@ public class Manufactor {
     public void setCity(String city) {
         this.city = city;
     }
+
+    @Override
+    public String toString() {
+        return "Manufactor{" + "name=" + name + ", country=" + country + ", city=" + city + '}';
+    }
     
     
     
